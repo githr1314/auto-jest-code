@@ -1,0 +1,87 @@
+{
+  "name": "auto-jest-code",
+  "publisher": "HR1314",
+  "icon": "images/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/githr1314/auto-jest-code"
+  },
+  "displayName": "auto-jest-code",
+  "description": "一个自动为 JavaScript 和 TypeScript 文件生成 Jest 单元测试代码的 VSCode 插件。（实验）",
+  "version": "0.0.4",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Jest Test Generator",
+      "properties": {
+        "jestTestGenerator.deepseekApiUrl": {
+          "type": "string",
+          "default": "https://api.deepseek.com/chat/completions",
+          "description": "DeepSeek API URL"
+        },
+        "jestTestGenerator.deepseekApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "DeepSeek API Key"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.generateJestTests",
+        "title": "Generate Jest Tests"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.generateJestTests",
+          "group": "navigation",
+          "when": "explorerResourceIsFolder || resourceLangId == javascript || resourceLangId == typescript"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "test:jest": "jest"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.7",
+    "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "babel-jest": "^29.7.0",
+    "eslint": "^9.16.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "vscode-test": "^1.6.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
