@@ -2,6 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-0.0.4-blue)
 ![VSCode Version](https://img.shields.io/badge/vscode-%5E1.96.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 基于deepseek的一个自动为 JavaScript 和 TypeScript 文件生成 Jest 单元测试代码的 VSCode 插件（实验）。
 
@@ -72,6 +73,14 @@ describe('sum', () => {
   });
 });
 ```
+
+---
+
+## 许可证
+
+本项目基于 [MIT 许可证](LICENSE)。
+🌐 GitHub: [auto-jest-code](https://github.com/githr1314/auto-jest-code)
+
 ---
 
 ## 致谢

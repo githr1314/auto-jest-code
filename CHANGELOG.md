@@ -20,3 +20,7 @@ All notable changes to the "auto-jest-code" extension will be documented in this
 
 - 增加了jest测试命令和由插件自动生成的单元测试代码
 
+## 0.0.5
+
+- 增加了github地址
+

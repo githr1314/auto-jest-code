@@ -8,7 +8,7 @@
   },
   "displayName": "auto-jest-code",
   "description": "一个自动为 JavaScript 和 TypeScript 文件生成 Jest 单元测试代码的 VSCode 插件。（实验）",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.96.0"
   },
